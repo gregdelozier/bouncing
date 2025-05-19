@@ -25,21 +25,30 @@ function setup() {
 }
 
 function draw() {
-  background(102);
+    background(102);
 
-  // Update the position of the shape
-  xpos = xpos + xspeed * xdirection;
-  ypos = ypos + yspeed * ydirection;
+    // Update the position of the shape
+    xpos = xpos + xspeed * xdirection;
+    ypos = ypos + yspeed * ydirection;
 
-  // Test to see if the shape exceeds the boundaries of the screen
-  // If it does, reverse its direction by multiplying by -1
-  if (xpos > width - rad || xpos < rad) {
+    // Test to see if the shape exceeds the boundaries of the screen
+    // If it does, reverse its direction by multiplying by -1
+    if (xpos > width - rad || xpos < rad) {
     xdirection *= -1;
-  }
-  if (ypos > height - rad || ypos < rad) {
-    ydirection *= -1;
-  }
+    }
+    if (ypos > height - rad || ypos < rad) {
+        ydirection *= -1;
+    }
 
-  // Draw the shape
-  ellipse(xpos, ypos, rad, rad);
+    // Draw the shape in color
+    // ellipse(xpos, ypos, rad, rad);
+
+    // Create a p5.Color object using RGB values.
+    let blue_color = color(64, 64, 255);
+
+    // Draw the left circle.
+    fill(blue_color);
+    noStroke();
+    circle(xpos, ypos, rad);
+  
 }
